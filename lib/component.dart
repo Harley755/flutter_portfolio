@@ -31,7 +31,7 @@ class _TabsWebState extends State<TabsWeb> {
         duration: const Duration(milliseconds: 100),
         curve: Curves.elasticIn,
         style: isSelected?
-          GoogleFonts.oswald(
+          GoogleFonts.roboto(
             shadows: [
               Shadow(color: Colors.black, offset: Offset(0, -8))
             ],
@@ -41,7 +41,7 @@ class _TabsWebState extends State<TabsWeb> {
             decorationThickness: 2,
             decorationColor: Colors.tealAccent,
           )
-          :GoogleFonts.oswald(color: Colors.black, fontSize: 23.0),
+          :GoogleFonts.roboto(color: Colors.black, fontSize: 23.0),
         child: Text(
           widget.title,
         )
@@ -76,10 +76,10 @@ class Sans extends StatelessWidget {
 class TextForm extends StatelessWidget {
   final heading;
   final width;
-  final hitText;
-  final maxLine;
+  final hinText;
+  final maxLines;
 
-  const TextForm({super.key, @required this.heading, @required this.width, @required this.hitText, this.maxLine});
+  const TextForm({super.key, @required this.heading, @required this.width, @required this.hinText, this.maxLines});
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +91,16 @@ class TextForm extends StatelessWidget {
         SizedBox(
           width: width,
           child: TextFormField(
-            validator: (value) {
-              
-            },
-            maxLines: maxLine==null?null:maxLine,
+            // inputFormatters: [
+            //   LengthLimitingTextInputFormatter(10),
+            //   FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
+            // ],
+            maxLines: maxLines==null?null:maxLines,
             decoration: InputDecoration(
+              focusedErrorBorder:  OutlineInputBorder(
+                borderSide: BorderSide( color: Colors.red),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide( color: Colors.teal),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -104,9 +109,16 @@ class TextForm extends StatelessWidget {
                 borderSide: BorderSide(color: Colors.teal, width: 2),
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
-              hintText: hitText,
+              hintText: hinText,
               hintStyle: GoogleFonts.poppins(fontSize: 14),
             ),
+            validator: (value) {
+              if (RegExp("\\bbrice\\b", caseSensitive: false).hasMatch(value.toString())) {
+                return "Match Found";
+              }
+              return null;
+            },
+            autovalidateMode: AutovalidateMode.onUserInteraction,
           )
         ),
       ],

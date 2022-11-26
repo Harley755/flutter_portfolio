@@ -281,24 +281,36 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   children: [
                     Column(
                       children: [
-                        TextForm(heading: "First name", width: 350, hitText: "Please type your first name"),
+                        TextForm(heading: "First name", width: 350, hinText: "Please type your first name"),
                         SizedBox(height: 15.0,),
-                        TextForm(heading: "Email", width: 350, hitText: "Please type your email"),
+                        TextForm(heading: "Email", width: 350, hinText: "Please type your email"),
                       ],
                     ),
                     Column(
                       children: [
-                        TextForm(heading: "Last name", width: 350, hitText: "Please type your last name"),
+                        TextForm(heading: "Last name", width: 350, hinText: "Please type your last name"),
                         SizedBox(height: 15.0,),
-                        TextForm(heading: "Phone number", width: 350, hitText: "Please type your phone number"),
+                        TextForm(heading: "Phone number", width: 350, hinText: "Please type your phone number"),
                       ],
                     )
                   ],
                 ),
-                TextForm(heading: "Message", width: widthDevice/1.5, hitText: "Please type your message", maxLine: 10,)
+                TextForm(heading: "Message", width: widthDevice/1.5, hinText: "Please type your message", maxLines: 10,),
+                MaterialButton(
+                  elevation: 20.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  height: 60.0,
+                  minWidth: 200.0,
+                  color: Colors.tealAccent,
+                  child: SansBold("Submit", 20.0),
+                  onPressed: () {}
+                )
               ],
             ),
           ),
+          SizedBox(height: 20.0,),
         ],
       ),
     );
