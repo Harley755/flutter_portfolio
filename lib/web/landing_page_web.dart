@@ -117,7 +117,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("../../assets/web.jpg", height: heightDevice/1.7,),
+                Image.asset("../../assets/web.jpg", height: widthDevice/1.9,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -212,57 +212,9 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Card(
-                      elevation: 30,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset("../../assets/webL.png", height: 200, width: 200,),
-                            SizedBox(height: 10,),
-                            SansBold("Web development", 15.0),
-                          ],
-                          
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 30,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset("../../assets/app.png", height: 200, width: 200,fit: BoxFit.contain,),
-                            SizedBox(height: 10,),
-                            SansBold("App development", 15.0),
-                          ],
-                          
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 30,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-                      shadowColor: Colors.tealAccent,
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset("../../assets/firebase.png", height: 200, width: 200,fit: BoxFit.contain,),
-                            SizedBox(height: 10,),
-                            SansBold("Back-end development", 15.0),
-                          ],
-                          
-                        ),
-                      ),
-                    ),
+                    AnimatedCardWeb(imagePath: "../../assets/webL.png", text: "Web developement"),
+                    AnimatedCardWeb(imagePath: "../../assets/app.png", text: "App developement", fit: BoxFit.contain, reverse: true,),
+                    AnimatedCardWeb(imagePath: "../../assets/firebase.png", text: "Back-end developement"),
                   ],
                 )
               ],
