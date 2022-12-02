@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_web/mobile/landing_page_mobile.dart';
-import 'package:portfolio_web/web/landing_page_web.dart';
+import 'package:portfolio_web/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,16 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth > 800) {
-            return LandingPageWeb();
-          } else {
-            return LandingPageMobile();
-          }
-        }
-      ),
+      onGenerateRoute: (settings) => Routes.generateRoute(settings),
+      initialRoute: '/',
     );
   }
 }

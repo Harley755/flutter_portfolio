@@ -1,13 +1,9 @@
-
-
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio_web/mobile/landing_page_mobile.dart';
 import 'package:portfolio_web/web/landing_page_web.dart';
 
 class Routes {
-  static Route<dynamic> generateRoute(RouteSettings, settings) {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
           return MaterialPageRoute(settings: settings, 
