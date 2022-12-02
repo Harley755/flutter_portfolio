@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:portfolio_web/component.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LandingPageWeb extends StatefulWidget {
   const LandingPageWeb({super.key});
@@ -9,6 +11,16 @@ class LandingPageWeb extends StatefulWidget {
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
+
+  Urllaunch(String svgPath, String url) {
+    return IconButton(
+      onPressed: ()async {
+        await launchUrl(Uri.parse(url));
+      },
+      icon: SvgPicture.asset(svgPath, color: Colors.black, width: 35.0,)
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -16,7 +28,38 @@ class _LandingPageWebState extends State<LandingPageWeb> {
   var widthDevice = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              radius: 74.0,
+              backgroundColor: Colors.tealAccent,
+              child: CircleAvatar(
+                radius: 72.0,
+                backgroundColor: Colors.black,
+                child: CircleAvatar(
+                  radius: 70.0,
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage("../../assets/photo.png"),
+                ),
+              ),
+            ),
+            SizedBox(height: 15.0,),
+            SansBold("Brice GOUDALO", 30.0),
+            SizedBox(height: 15.0,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Urllaunch("../../assets/instagram.svg", "https://www.instagram.com/?hl=fr"),
+                Urllaunch("../../assets/github.svg", "https://github.com/Harley755"),
+                Urllaunch("../../assets/twitter.svg", "https://twitter.com/bg_dev2"),
+              ],
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
