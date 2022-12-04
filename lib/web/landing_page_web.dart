@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:portfolio_web/component.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class LandingPageWeb extends StatefulWidget {
   const LandingPageWeb({super.key});
@@ -12,14 +10,6 @@ class LandingPageWeb extends StatefulWidget {
 
 class _LandingPageWebState extends State<LandingPageWeb> {
 
-  Urllaunch(String svgPath, String url) {
-    return IconButton(
-      onPressed: ()async {
-        await launchUrl(Uri.parse(url));
-      },
-      icon: SvgPicture.asset(svgPath, color: Colors.black, width: 35.0,)
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +42,9 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Urllaunch("../../assets/instagram.svg", "https://www.instagram.com/?hl=fr"),
-                Urllaunch("../../assets/github.svg", "https://github.com/Harley755"),
-                Urllaunch("../../assets/twitter.svg", "https://twitter.com/bg_dev2"),
+                Urllaunch(svgPath: "../../assets/instagram.svg", url: "https://www.instagram.com/?hl=fr"),
+                Urllaunch(svgPath: "../../assets/github.svg", url: "https://github.com/Harley755"),
+                Urllaunch(svgPath: "../../assets/twitter.svg", url: "https://twitter.com/bg_dev2"),
               ],
             )
           ],

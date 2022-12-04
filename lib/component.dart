@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TabsWeb extends StatefulWidget {
   final title;
@@ -50,6 +52,40 @@ class _TabsWebState extends State<TabsWeb> {
   }
 }
 
+
+
+// TABSMOBILES
+class TabsMobile extends StatefulWidget {
+  final text;
+  final route;
+
+  const TabsMobile({super.key, @required this.text, @required this.route});
+
+  @override
+  State<TabsMobile> createState() => _TabsMobileState();
+}
+
+class _TabsMobileState extends State<TabsMobile> {
+  @override
+  Widget build(BuildContext context) {
+    return  MaterialButton(
+      elevation: 20.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0)
+      ),
+      height: 50.0,
+      minWidth: 200.0,
+      color: Colors.black,
+      child: Text(widget.text, style: GoogleFonts.openSans(
+        fontSize: 20.0,
+        color: Colors.white,
+      ),),
+      onPressed: () {
+
+      }
+    );
+  }
+}
 class SansBold extends StatelessWidget {
   final title;
   final size;
@@ -139,7 +175,7 @@ class AnimatedCardWeb extends StatefulWidget {
 }
 
 class _AnimatedCardWebState extends State<AnimatedCardWeb>
-    with SingleTickerProviderStateMixin {
+  with SingleTickerProviderStateMixin {
   late AnimationController _controller = AnimationController(vsync: this, duration: Duration(seconds: 4))..repeat(reverse: true);
 
   late Animation<Offset> _animation = Tween(
@@ -176,6 +212,22 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
           ),
         ),
       ),
+    );
+  }
+}
+
+class Urllaunch extends StatelessWidget {
+  final svgPath;
+  final url;
+  const Urllaunch({super.key, @required this.svgPath, @required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: ()async {
+        await launchUrl(Uri.parse(url));
+      },
+      icon: SvgPicture.asset(svgPath, color: Colors.black, width: 35.0,)
     );
   }
 }
