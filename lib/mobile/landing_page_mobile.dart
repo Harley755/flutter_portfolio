@@ -17,6 +17,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
     // var widthDevice = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      extendBodyBehindAppBar: true, // as App Bar
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -61,6 +62,84 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             ),
           ],
         ),
+      ),
+      body: ListView(
+        children: [
+          //  FIRST SECTION
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                    radius: 117.0,
+                    backgroundColor: Colors.tealAccent,
+                  child: CircleAvatar(
+                    radius: 110.0,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage("../../assets/photo.png"),
+                  ),
+                ),
+                SizedBox(height: 25.0,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.tealAccent,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                          bottomRight: Radius.circular(20.0),
+                        )
+                      ),
+                      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                      child: SansBold("Hello I'm", 15.0),
+                    ),
+                    SansBold("Brice GOUDALO", 40),
+                    SansBold("Flutter developer", 40),
+                  ],
+                ),
+                SizedBox(height: 15.0,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Wrap(
+                      direction: Axis.vertical,
+                      spacing: 3,
+                      children: [
+                        Icon(Icons.email),
+                        Icon(Icons.call),
+                        Icon(Icons.location_pin),
+                      ],
+                    ),
+                    SizedBox(width: 40.0,),
+                    Wrap(
+                      direction: Axis.vertical,
+                      spacing: 9.0,
+                      children: [
+                        Sans("bricegoudalo@gmail.com", 15.0),
+                        Sans("+229 96203314", 15.0),
+                        Sans("Houeyiho, Cotonou Bénin", 15.0)
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 90.0,),
+          Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SansBold("About me", 35.0)
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
