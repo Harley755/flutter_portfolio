@@ -58,7 +58,7 @@ class _ContactWebState extends State<ContactWeb> {
                     );
                   },
                   icon: SvgPicture.asset(
-                    "../../assets/instagram.svg",
+                    "../../assets/github.svg",
                     color: Colors.black,
                     width: 35.0,
                   ),
@@ -70,7 +70,7 @@ class _ContactWebState extends State<ContactWeb> {
                     );
                   },
                   icon: SvgPicture.asset(
-                    "../../assets/instagram.svg",
+                    "../../assets/twitter.svg",
                     color: Colors.black,
                     width: 35.0,
                   ),
@@ -85,13 +85,50 @@ class _ContactWebState extends State<ContactWeb> {
         headerSliverBuilder: (BuildContext context, innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              expandedHeight: 520.0,
               backgroundColor: Colors.white,
               iconTheme: IconThemeData(
                 size: 25.0,
                 color: Colors.black,
               ),
               flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset("../../assets/contact_image.jpg"),
+                background: Image.asset(
+                  "../../assets/contact_image.jpg",
+                  fit: BoxFit.cover,
+                  filterQuality: FilterQuality.high,
+                ),
+              ),
+              title: Row(
+                children: [
+                  Spacer(
+                    flex: 3,
+                  ),
+                  TabsWeb(
+                    title: "Home",
+                    route: '/',
+                  ),
+                  Spacer(),
+                  TabsWeb(
+                    title: "Works",
+                    route: '/works',
+                  ),
+                  Spacer(),
+                  TabsWeb(
+                    title: "Bloc",
+                    route: '/bloc',
+                  ),
+                  Spacer(),
+                  TabsWeb(
+                    title: "About",
+                    route: '/about',
+                  ),
+                  Spacer(),
+                  TabsWeb(
+                    title: "Contact",
+                    route: '/contact',
+                  ),
+                  Spacer(),
+                ],
               ),
             ),
           ];
