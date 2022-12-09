@@ -85,7 +85,7 @@ class _ContactWebState extends State<ContactWeb> {
         headerSliverBuilder: (BuildContext context, innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              expandedHeight: 520.0,
+              expandedHeight: 550.0,
               backgroundColor: Colors.white,
               iconTheme: IconThemeData(
                 size: 25.0,
@@ -103,37 +103,88 @@ class _ContactWebState extends State<ContactWeb> {
                   Spacer(
                     flex: 3,
                   ),
-                  TabsWeb(
-                    title: "Home",
-                    route: '/',
-                  ),
+                  TabsWeb(title: "Home", route: '/'),
                   Spacer(),
-                  TabsWeb(
-                    title: "Works",
-                    route: '/works',
-                  ),
+                  TabsWeb(title: "Works", route: '/works'),
                   Spacer(),
-                  TabsWeb(
-                    title: "Bloc",
-                    route: '/bloc',
-                  ),
+                  TabsWeb(title: "Bloc", route: '/bloc'),
                   Spacer(),
-                  TabsWeb(
-                    title: "About",
-                    route: '/about',
-                  ),
+                  TabsWeb(title: "About", route: '/about'),
                   Spacer(),
-                  TabsWeb(
-                    title: "Contact",
-                    route: '/contact',
-                  ),
+                  TabsWeb(title: "Contact", route: '/contact'),
                   Spacer(),
                 ],
               ),
             ),
           ];
         },
-        body: SingleChildScrollView(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 30.0),
+              SansBold("Contact me", 40.0),
+              SizedBox(height: 30.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      TextForm(
+                        text: "First Name",
+                        containerWidth: 350.0,
+                        hinText: "Please type first name",
+                      ),
+                      SizedBox(height: 15.0),
+                      TextForm(
+                        text: "Email",
+                        containerWidth: 350.0,
+                        hinText: "Please type email adresse",
+                      ),
+                      SizedBox(height: 15.0),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextForm(
+                        text: "Last Name",
+                        containerWidth: 350.0,
+                        hinText: "Please type last name",
+                      ),
+                      SizedBox(height: 15.0),
+                      TextForm(
+                        text: "Phone number",
+                        containerWidth: 350.0,
+                        hinText: "Please type phone number",
+                      ),
+                      SizedBox(height: 15.0),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.0),
+              TextForm(
+                text: "Message",
+                containerWidth: widthDevice / 1.5,
+                hinText: "Please type message",
+                maxLines: 10,
+              ),
+              SizedBox(height: 20.0),
+              MaterialButton(
+                onPressed: () {},
+                elevation: 20.0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                height: 60.0,
+                minWidth: 200.0,
+                color: Colors.tealAccent,
+                child: SansBold("Submit", 20.0),
+              ),
+              SizedBox(height: 10.0)
+            ],
+          ),
+        ),
       ),
     );
   }
