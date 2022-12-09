@@ -66,30 +66,15 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Spacer(
               flex: 3,
             ),
-            TabsWeb(
-              title: "Home",
-              route: '/',
-            ),
+            TabsWeb(title: "Home", route: '/'),
             Spacer(),
-            TabsWeb(
-              title: "Works",
-              route: '/works',
-            ),
+            TabsWeb(title: "Works", route: '/works'),
             Spacer(),
-            TabsWeb(
-              title: "Bloc",
-              route: '/bloc',
-            ),
+            TabsWeb(title: "Bloc", route: '/bloc'),
             Spacer(),
-            TabsWeb(
-              title: "About",
-              route: '/about',
-            ),
+            TabsWeb(title: "About", route: '/about'),
             Spacer(),
-            TabsWeb(
-              title: "Contact",
-              route: '/contact',
-            ),
+            TabsWeb(title: "Contact", route: '/contact'),
             Spacer(),
           ],
         ),
