@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../component.dart';
 
@@ -10,6 +11,21 @@ class AboutMobile extends StatefulWidget {
 }
 
 class _AboutMobileState extends State<AboutMobile> {
+  tealContainer(String text) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+            color: Colors.tealAccent, style: BorderStyle.solid, width: 2.0),
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      padding: EdgeInsets.all(7.0),
+      child: Text(
+        text,
+        style: GoogleFonts.openSans(fontSize: 15.0),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,12 +97,48 @@ class _AboutMobileState extends State<AboutMobile> {
                   child: CircleAvatar(
                     radius: 110.0,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage(
-                      "../../assets/photo.png",
-                    ),
+                    backgroundImage: AssetImage("../../assets/photo.png"),
                   ),
                 ),
               ),
+              SizedBox(height: 20.0),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SansBold("About me", 35.0),
+                    SizedBox(height: 10.0),
+                    Sans(
+                      "Hello! I'm Brice GOUDALO I specialize in flutter developement",
+                      15.0,
+                    ),
+                    Sans(
+                      "I strive to ensure astounding  performance with state of",
+                      15.0,
+                    ),
+                    Sans(
+                      "The art security for Android, Ios, Web, Mac, Linux",
+                      15.0,
+                    ),
+                    SizedBox(height: 15.0),
+                    Wrap(
+                      spacing: 7.0,
+                      runSpacing: 7.0,
+                      children: [
+                        tealContainer("Flutter"),
+                        tealContainer("Firebase"),
+                        tealContainer("Android"),
+                        tealContainer("Windows"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 40.0),
+
+              // WEB DEVELOPMENT SECOND SECTION
             ],
           ),
         ),

@@ -168,7 +168,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             height: 90.0,
           ),
 
-          // SECOND SECTION
+          // SECOND SECTION ABOUT SECTION
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
