@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_web/mobile/about_mobile.dart';
 import 'package:portfolio_web/mobile/contact_mobile.dart';
 import 'package:portfolio_web/mobile/landing_page_mobile.dart';
+import 'package:portfolio_web/web/about_web.dart';
 import 'package:portfolio_web/web/contact_web.dart';
 import 'package:portfolio_web/web/landing_page_web.dart';
 
@@ -15,6 +17,18 @@ class Routes {
               return LandingPageWeb();
             } else {
               return LandingPageMobile();
+            }
+          }),
+        );
+
+      case '/about':
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => LayoutBuilder(builder: (context, constraints) {
+            if (constraints.maxWidth > 800) {
+              return AboutWeb();
+            } else {
+              return AboutMobile();
             }
           }),
         );
@@ -34,13 +48,15 @@ class Routes {
       default:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => LayoutBuilder(builder: (context, constraints) {
-            if (constraints.maxWidth > 800) {
-              return LandingPageWeb();
-            } else {
-              return LandingPageMobile();
-            }
-          }),
+          builder: (_) => LayoutBuilder(
+            builder: (context, constraints) {
+              if (constraints.maxWidth > 800) {
+                return LandingPageWeb();
+              } else {
+                return LandingPageMobile();
+              }
+            },
+          ),
         );
     }
   }
