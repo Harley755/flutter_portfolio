@@ -139,6 +139,61 @@ class _AboutMobileState extends State<AboutMobile> {
               SizedBox(height: 40.0),
 
               // WEB DEVELOPMENT SECOND SECTION
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  AnimatedCardWeb(
+                    imagePath: "../../assets/webL.png",
+                    containerWidth: 200.0,
+                  ),
+                  SizedBox(height: 30.0),
+                  SansBold("Web development", 20.0),
+                  SizedBox(height: 10.0),
+                ],
+              ),
+              Sans(
+                "I'm here to buid your presence online with state of the art web apps",
+                15,
+              ),
+
+              // APP DEVELOPMENT THIRD SECTION
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  AnimatedCardWeb(
+                    imagePath: "../../assets/app.png",
+                    containerWidth: 200.0,
+                    reverse: true,
+                  ),
+                  SizedBox(height: 30.0),
+                  SansBold("App development", 20.0),
+                  SizedBox(height: 10.0),
+                ],
+              ),
+              Sans(
+                "Do you need a high-performance, responsive and beautiful app? Don't worry, I've got you covered.",
+                15,
+              ),
+
+              // BACK-END DEVELOPMENT FOURTH SECTION
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  AnimatedCardWeb(
+                    imagePath: "../../assets/firebase.png",
+                    containerWidth: 200.0,
+                    reverse: true,
+                  ),
+                  SizedBox(height: 30.0),
+                  SansBold("Back-End development", 20.0),
+                  SizedBox(height: 10.0),
+                ],
+              ),
+              Sans(
+                "Do you want your back-end to be highly scalable and secure ? Let's have a conversation on how can i help you with that.",
+                15,
+              ),
+              SizedBox(height: 20.0),
             ],
           ),
         ),

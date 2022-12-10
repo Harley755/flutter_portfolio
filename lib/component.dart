@@ -238,7 +238,7 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
               SizedBox(
                 height: 10,
               ),
-              SansBold(widget.text, 15.0),
+              widget.text == null ? SizedBox() : SansBold(widget.text, 15.0),
             ],
           ),
         ),
