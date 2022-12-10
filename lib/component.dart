@@ -255,13 +255,14 @@ class Urllaunch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-        onPressed: () async {
-          await launchUrl(Uri.parse(url));
-        },
-        icon: SvgPicture.asset(
-          svgPath,
-          color: Colors.black,
-          width: 35.0,
-        ));
+      onPressed: () async {
+        await launchUrl(Uri.parse(url));
+      },
+      icon: SvgPicture.asset(
+        svgPath,
+        color: Colors.black,
+        width: 35.0,
+      ),
+    );
   }
 }
