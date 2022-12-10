@@ -38,7 +38,6 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
           size: 35.0,
           color: Colors.black,
         ),
-        title: const Text("My portfolio"),
       ),
       endDrawer: Drawer(
         child: Column(
@@ -94,20 +93,20 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
       body: ListView(
         children: [
           //  FIRST SECTION
+          CircleAvatar(
+            radius: 117.0,
+            backgroundColor: Colors.tealAccent,
+            child: CircleAvatar(
+              radius: 110.0,
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage("../../assets/photo.png"),
+            ),
+          ),
           Padding(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 117.0,
-                  backgroundColor: Colors.tealAccent,
-                  child: CircleAvatar(
-                    radius: 110.0,
-                    backgroundColor: Colors.white,
-                    backgroundImage: AssetImage("../../assets/photo.png"),
-                  ),
-                ),
                 SizedBox(
                   height: 25.0,
                 ),
@@ -116,14 +115,17 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                          color: Colors.tealAccent,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20.0),
-                            topRight: Radius.circular(20.0),
-                            bottomRight: Radius.circular(20.0),
-                          )),
+                        color: Colors.tealAccent,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                          bottomRight: Radius.circular(20.0),
+                        ),
+                      ),
                       padding: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
+                        vertical: 10.0,
+                        horizontal: 20.0,
+                      ),
                       child: SansBold("Hello I'm", 15.0),
                     ),
                     SansBold("Brice GOUDALO", 40),
@@ -134,7 +136,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                   height: 15.0,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Wrap(
                       direction: Axis.vertical,
@@ -168,9 +170,9 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
 
           // SECOND SECTION
           Padding(
-            padding: EdgeInsets.only(left: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SansBold("About me", 35.0),
@@ -197,9 +199,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               ],
             ),
           ),
-          SizedBox(
-            height: 60.0,
-          ),
+          SizedBox(height: 60.0),
 
           // THIRD SECTION WHAT I DO
           Column(
@@ -211,9 +211,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 text: "Web developement",
                 containerWidth: 300.0,
               ),
-              SizedBox(
-                height: 35.0,
-              ),
+              SizedBox(height: 35.0),
               AnimatedCardWeb(
                 imagePath: "../../assets/app.png",
                 text: "App developement",
@@ -221,17 +219,13 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 reverse: true,
                 containerWidth: 300.0,
               ),
-              SizedBox(
-                height: 35.0,
-              ),
+              SizedBox(height: 35.0),
               AnimatedCardWeb(
                 imagePath: "../../assets/firebase.png",
                 text: "Back-end developement",
                 containerWidth: 300.0,
               ),
-              SizedBox(
-                height: 60.0,
-              ),
+              SizedBox(height: 60.0),
               Wrap(
                 spacing: 20.0,
                 runSpacing: 20.0,
@@ -239,21 +233,25 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 children: [
                   SansBold("Contact me", 35.0),
                   TextForm(
-                      text: "First name",
-                      containerWidth: widthDevice / 1.4,
-                      hinText: "Please type your first name"),
+                    text: "First name",
+                    containerWidth: widthDevice / 1.4,
+                    hinText: "Please type your first name",
+                  ),
                   TextForm(
-                      text: "Last name",
-                      containerWidth: widthDevice / 1.4,
-                      hinText: "Please type your last name"),
+                    text: "Last name",
+                    containerWidth: widthDevice / 1.4,
+                    hinText: "Please type your last name",
+                  ),
                   TextForm(
-                      text: "Email",
-                      containerWidth: widthDevice / 1.4,
-                      hinText: "Please type your email"),
+                    text: "Email",
+                    containerWidth: widthDevice / 1.4,
+                    hinText: "Please type your email",
+                  ),
                   TextForm(
-                      text: "Phone number",
-                      containerWidth: widthDevice / 1.4,
-                      hinText: "Please type your phone number"),
+                    text: "Phone number",
+                    containerWidth: widthDevice / 1.4,
+                    hinText: "Please type your phone number",
+                  ),
                   TextForm(
                     text: "Message",
                     containerWidth: widthDevice / 1.4,
