@@ -186,7 +186,7 @@ class AnimatedCardWeb extends StatefulWidget {
   const AnimatedCardWeb(
       {super.key,
       @required this.imagePath,
-      @required this.text,
+      this.text,
       this.fit,
       this.reverse,
       this.containerWidth,
