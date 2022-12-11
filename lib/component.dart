@@ -114,7 +114,7 @@ class Sans extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: GoogleFonts.openSans(fontSize: size));
+    return Text(title, style: GoogleFonts.openSans(fontSize: size.toDouble()));
   }
 }
 

@@ -27,7 +27,7 @@ class _BlogMobileState extends State<BlogMobile> {
                   child: CircleAvatar(
                     radius: 70.0,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage('/assets/photo.png'),
+                    backgroundImage: AssetImage('assets/photo.png'),
                   ),
                 ),
               ),
@@ -49,11 +49,11 @@ class _BlogMobileState extends State<BlogMobile> {
                     url: "https://www.instagram.com/?hl=fr",
                   ),
                   Urllaunch(
-                    svgPath: "../../assets/github.svg",
+                    svgPath: 'assets/github.svg',
                     url: "https://github.com/Harley755",
                   ),
                   Urllaunch(
-                    svgPath: "../../assets/twitter.svg",
+                    svgPath: 'assets/twitter.svg',
                     url: "https://twitter.com/bg_dev2",
                   ),
                 ],
@@ -86,7 +86,7 @@ class _BlogMobileState extends State<BlogMobile> {
                     ),
                   ),
                   background: Image.asset(
-                    "../../assets/blog.jpg",
+                    'assets/blog.jpg',
                     filterQuality: FilterQuality.high,
                     fit: BoxFit.cover,
                   ),

@@ -46,7 +46,7 @@ class _AboutWebState extends State<AboutWeb> {
                 child: CircleAvatar(
                   radius: 70.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage("/assets/photo.png"),
+                  backgroundImage: AssetImage('assets/photo.png'),
                 ),
               ),
             ),
@@ -65,11 +65,11 @@ class _AboutWebState extends State<AboutWeb> {
                   url: "https://www.instagram.com/?hl=fr",
                 ),
                 Urllaunch(
-                  svgPath: "../../assets/github.svg",
+                  svgPath: 'assets/github.svg',
                   url: "https://github.com/Harley755",
                 ),
                 Urllaunch(
-                  svgPath: "../../assets/twitter.svg",
+                  svgPath: 'assets/twitter.svg',
                   url: "https://twitter.com/bg_dev2",
                 ),
               ],
@@ -151,7 +151,7 @@ class _AboutWebState extends State<AboutWeb> {
                     child: CircleAvatar(
                       radius: 140.0,
                       backgroundColor: Colors.white,
-                      backgroundImage: AssetImage('/assets/photo.png'),
+                      backgroundImage: AssetImage(' assets/photo.png'),
                     ),
                   ),
                 ),
@@ -164,7 +164,7 @@ class _AboutWebState extends State<AboutWeb> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               AnimatedCardWeb(
-                imagePath: "../../assets/webL.png",
+                imagePath: 'assets/webL.png',
                 heigth: 250.0,
                 containerWidth: 250,
               ),
@@ -203,7 +203,7 @@ class _AboutWebState extends State<AboutWeb> {
                 ),
               ),
               AnimatedCardWeb(
-                imagePath: "../../assets/app.png",
+                imagePath: 'assets/app.png',
                 containerWidth: 250.0,
                 heigth: 250.0,
                 reverse: true,
@@ -217,7 +217,7 @@ class _AboutWebState extends State<AboutWeb> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               AnimatedCardWeb(
-                imagePath: "../../assets/firebase.png",
+                imagePath: 'assets/firebase.png',
                 heigth: 250.0,
                 containerWidth: 250.0,
               ),

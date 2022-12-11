@@ -49,7 +49,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 child: CircleAvatar(
                   radius: 70.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('/assets/photo.png'),
+                  backgroundImage: AssetImage('assets/photo.png'),
                 ),
               ),
             ),
@@ -80,10 +80,10 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                     svgPath: "assets/instagram.svg",
                     url: "https://www.instagram.com/?hl=fr"),
                 Urllaunch(
-                    svgPath: "../../assets/github.svg",
+                    svgPath: 'assets/github.svg',
                     url: "https://github.com/Harley755"),
                 Urllaunch(
-                    svgPath: "../../assets/twitter.svg",
+                    svgPath: 'assets/twitter.svg',
                     url: "https://twitter.com/bg_dev2"),
               ],
             ),
@@ -99,7 +99,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             child: CircleAvatar(
               radius: 110.0,
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage("/assets/photo.png"),
+              backgroundImage: AssetImage('assets/photo.png'),
             ),
           ),
           Padding(
@@ -210,13 +210,13 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             children: [
               SansBold("What i do ?", 35.0),
               AnimatedCardWeb(
-                imagePath: "../../assets/webL.png",
+                imagePath: 'assets/webL.png',
                 text: "Web developement",
                 containerWidth: 300.0,
               ),
               SizedBox(height: 35.0),
               AnimatedCardWeb(
-                imagePath: "../../assets/app.png",
+                imagePath: 'assets/app.png',
                 text: "App developement",
                 fit: BoxFit.contain,
                 reverse: true,
@@ -224,7 +224,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               ),
               SizedBox(height: 35.0),
               AnimatedCardWeb(
-                imagePath: "../../assets/firebase.png",
+                imagePath: 'assets/firebase.png',
                 text: "Back-end developement",
                 containerWidth: 300.0,
               ),

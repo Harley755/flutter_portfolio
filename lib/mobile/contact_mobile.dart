@@ -26,7 +26,7 @@ class _ContactMobileState extends State<ContactMobile> {
                 child: CircleAvatar(
                   radius: 70.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('/assets/photo.png'),
+                  backgroundImage: AssetImage('assets/photo.png'),
                 ),
               ),
             ),
@@ -48,11 +48,11 @@ class _ContactMobileState extends State<ContactMobile> {
                   url: "https://www.instagram.com/?hl=fr",
                 ),
                 Urllaunch(
-                  svgPath: "../../assets/github.svg",
+                  svgPath: 'assets/github.svg',
                   url: "https://github.com/Harley755",
                 ),
                 Urllaunch(
-                  svgPath: "../../assets/twitter.svg",
+                  svgPath: 'assets/twitter.svg',
                   url: "https://twitter.com/bg_dev2",
                 ),
               ],
@@ -69,7 +69,7 @@ class _ContactMobileState extends State<ContactMobile> {
               iconTheme: IconThemeData(size: 35.0, color: Colors.black),
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  "../../assets/contact_image.jpg",
+                  "assets/contact_image.jpg",
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.cover,
                 ),

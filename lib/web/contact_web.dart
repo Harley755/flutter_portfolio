@@ -26,7 +26,7 @@ class _ContactWebState extends State<ContactWeb> {
               child: CircleAvatar(
                 radius: 70.0,
                 backgroundColor: Colors.white,
-                backgroundImage: AssetImage("/assets/photo.png"),
+                backgroundImage: AssetImage('assets/photo.png'),
               ),
             ),
             SizedBox(
@@ -58,7 +58,7 @@ class _ContactWebState extends State<ContactWeb> {
                     );
                   },
                   icon: SvgPicture.asset(
-                    "../../assets/github.svg",
+                    'assets/github.svg',
                     color: Colors.black,
                     width: 35.0,
                   ),
@@ -70,7 +70,7 @@ class _ContactWebState extends State<ContactWeb> {
                     );
                   },
                   icon: SvgPicture.asset(
-                    "../../assets/twitter.svg",
+                    'assets/twitter.svg',
                     color: Colors.black,
                     width: 35.0,
                   ),
@@ -93,7 +93,7 @@ class _ContactWebState extends State<ContactWeb> {
               ),
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
-                  "../../assets/contact_image.jpg",
+                  "assets/contact_image.jpg",
                   fit: BoxFit.cover,
                   filterQuality: FilterQuality.high,
                 ),

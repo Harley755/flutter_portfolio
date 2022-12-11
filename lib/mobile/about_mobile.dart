@@ -50,7 +50,7 @@ class _AboutMobileState extends State<AboutMobile> {
                   child: CircleAvatar(
                     radius: 70.0,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage('/assets/photo.png'),
+                    backgroundImage: AssetImage('assets/photo.png'),
                   ),
                 ),
               ),
@@ -72,11 +72,11 @@ class _AboutMobileState extends State<AboutMobile> {
                     url: "https://www.instagram.com/?hl=fr",
                   ),
                   Urllaunch(
-                    svgPath: "../../assets/github.svg",
+                    svgPath: 'assets/github.svg',
                     url: "https://github.com/Harley755",
                   ),
                   Urllaunch(
-                    svgPath: "../../assets/twitter.svg",
+                    svgPath: 'assets/twitter.svg',
                     url: "https://twitter.com/bg_dev2",
                   ),
                 ],
@@ -97,7 +97,7 @@ class _AboutMobileState extends State<AboutMobile> {
                   child: CircleAvatar(
                     radius: 110.0,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage("/assets/photo.png"),
+                    backgroundImage: AssetImage('assets/photo.png'),
                   ),
                 ),
               ),
@@ -143,7 +143,7 @@ class _AboutMobileState extends State<AboutMobile> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AnimatedCardWeb(
-                    imagePath: "../../assets/webL.png",
+                    imagePath: 'assets/webL.png',
                     containerWidth: 200.0,
                   ),
                   SizedBox(height: 30.0),
@@ -161,7 +161,7 @@ class _AboutMobileState extends State<AboutMobile> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AnimatedCardWeb(
-                    imagePath: "../../assets/app.png",
+                    imagePath: 'assets/app.png',
                     containerWidth: 200.0,
                     reverse: true,
                   ),
@@ -180,7 +180,7 @@ class _AboutMobileState extends State<AboutMobile> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AnimatedCardWeb(
-                    imagePath: "../../assets/firebase.png",
+                    imagePath: 'assets/firebase.png',
                     containerWidth: 200.0,
                     reverse: true,
                   ),
