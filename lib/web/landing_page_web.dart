@@ -29,7 +29,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                 child: CircleAvatar(
                   radius: 70.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage("../../assets/photo.png"),
+                  backgroundImage: AssetImage("/assets/photo.png"),
                 ),
               ),
             ),
@@ -44,7 +44,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Urllaunch(
-                    svgPath: "../../assets/instagram.svg",
+                    svgPath: "assets/instagram.svg",
                     url: "https://www.instagram.com/?hl=fr"),
                 Urllaunch(
                     svgPath: "../../assets/github.svg",
@@ -70,7 +70,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
             Spacer(),
             TabsWeb(title: "Works", route: '/works'),
             Spacer(),
-            TabsWeb(title: "Bloc", route: '/bloc'),
+            TabsWeb(title: "Blog", route: '/blog'),
             Spacer(),
             TabsWeb(title: "About", route: '/about'),
             Spacer(),
@@ -154,7 +154,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     child: CircleAvatar(
                       radius: 140.0,
                       backgroundColor: Colors.white,
-                      backgroundImage: AssetImage('../../assets/photo.png'),
+                      backgroundImage: AssetImage('/assets/photo.png'),
                     ),
                   ),
                 ),

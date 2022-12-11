@@ -49,7 +49,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                 child: CircleAvatar(
                   radius: 70.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('../../assets/photo.png'),
+                  backgroundImage: AssetImage('/assets/photo.png'),
                 ),
               ),
             ),
@@ -61,7 +61,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             SizedBox(
               height: 20.0,
             ),
-            TabsMobile(text: "Blogs", route: '/blogs'),
+            TabsMobile(text: "Blog", route: '/blog'),
             SizedBox(
               height: 20.0,
             ),
@@ -77,7 +77,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Urllaunch(
-                    svgPath: "../../assets/instagram.svg",
+                    svgPath: "assets/instagram.svg",
                     url: "https://www.instagram.com/?hl=fr"),
                 Urllaunch(
                     svgPath: "../../assets/github.svg",
@@ -99,7 +99,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             child: CircleAvatar(
               radius: 110.0,
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage("../../assets/photo.png"),
+              backgroundImage: AssetImage("/assets/photo.png"),
             ),
           ),
           Padding(
@@ -128,8 +128,8 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                       ),
                       child: SansBold("Hello I'm", 15.0),
                     ),
-                    SansBold("Brice GOUDALO", 40),
-                    SansBold("Flutter developer", 40),
+                    SansBold("Brice GOUDALO", 40.0),
+                    SansBold("Flutter developer", 40.0),
                   ],
                 ),
                 SizedBox(
@@ -177,15 +177,18 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
               children: [
                 SansBold("About me", 35.0),
                 Sans(
-                    "Hello! I'm Brice GOUDALO I specialize in flutter developement",
-                    15.0),
-                Sans("I strive to ensure astounding  performance with state of",
-                    15.0),
-                Sans(
-                    "The art security for Android, Ios, Web, Mac, Linux", 15.0),
-                SizedBox(
-                  height: 10.0,
+                  "Hello! I'm Brice GOUDALO I specialize in flutter developement",
+                  15.0,
                 ),
+                Sans(
+                  "I strive to ensure astounding  performance with state of",
+                  15.0,
+                ),
+                Sans(
+                  "The art security for Android, Ios, Web, Mac, Linux",
+                  15.0,
+                ),
+                SizedBox(height: 10.0),
                 Wrap(
                   spacing: 7.0,
                   runSpacing: 7.0,

@@ -72,21 +72,24 @@ class _TabsMobileState extends State<TabsMobile> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-        elevation: 20.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-        height: 50.0,
-        minWidth: 200.0,
-        color: Colors.black,
-        child: Text(
-          widget.text,
-          style: GoogleFonts.openSans(
-            fontSize: 20.0,
-            color: Colors.white,
-          ),
+      elevation: 20.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      height: 50.0,
+      minWidth: 200.0,
+      color: Colors.black,
+      child: Text(
+        widget.text,
+        style: GoogleFonts.openSans(
+          fontSize: 20.0,
+          color: Colors.white,
         ),
-        onPressed: () {
-          Navigator.of(context).pushNamed(widget.route);
-        });
+      ),
+      onPressed: () {
+        Navigator.of(context).pushNamed(widget.route);
+      },
+    );
   }
 }
 
@@ -112,6 +115,32 @@ class Sans extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(title, style: GoogleFonts.openSans(fontSize: size));
+  }
+}
+
+class AbelCustom extends StatelessWidget {
+  final text;
+  final size;
+  final color;
+  final fontWeight;
+  const AbelCustom({
+    super.key,
+    @required this.text,
+    @required this.size,
+    this.color,
+    this.fontWeight,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.abel(
+        fontSize: size,
+        color: color == null ? Colors.black : color,
+        fontWeight: fontWeight == null ? FontWeight.normal : fontWeight,
+      ),
+    );
   }
 }
 

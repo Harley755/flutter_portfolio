@@ -46,7 +46,7 @@ class _AboutWebState extends State<AboutWeb> {
                 child: CircleAvatar(
                   radius: 70.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage("../../assets/photo.png"),
+                  backgroundImage: AssetImage("/assets/photo.png"),
                 ),
               ),
             ),
@@ -61,7 +61,7 @@ class _AboutWebState extends State<AboutWeb> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Urllaunch(
-                  svgPath: "../../assets/instagram.svg",
+                  svgPath: "assets/instagram.svg",
                   url: "https://www.instagram.com/?hl=fr",
                 ),
                 Urllaunch(
@@ -90,7 +90,7 @@ class _AboutWebState extends State<AboutWeb> {
             Spacer(),
             TabsWeb(title: "Works", route: '/works'),
             Spacer(),
-            TabsWeb(title: "Bloc", route: '/bloc'),
+            TabsWeb(title: "Blog", route: '/blog'),
             Spacer(),
             TabsWeb(title: "About", route: '/about'),
             Spacer(),
@@ -151,7 +151,7 @@ class _AboutWebState extends State<AboutWeb> {
                     child: CircleAvatar(
                       radius: 140.0,
                       backgroundColor: Colors.white,
-                      backgroundImage: AssetImage('../../assets/photo.png'),
+                      backgroundImage: AssetImage('/assets/photo.png'),
                     ),
                   ),
                 ),

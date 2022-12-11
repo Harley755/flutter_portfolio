@@ -50,7 +50,7 @@ class _AboutMobileState extends State<AboutMobile> {
                   child: CircleAvatar(
                     radius: 70.0,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage('../../assets/photo.png'),
+                    backgroundImage: AssetImage('/assets/photo.png'),
                   ),
                 ),
               ),
@@ -58,7 +58,7 @@ class _AboutMobileState extends State<AboutMobile> {
               SizedBox(height: 20.0),
               TabsMobile(text: "Works", route: '/works'),
               SizedBox(height: 20.0),
-              TabsMobile(text: "Blogs", route: '/blogs'),
+              TabsMobile(text: "Blog", route: '/blog'),
               SizedBox(height: 20.0),
               TabsMobile(text: "About", route: '/about'),
               SizedBox(height: 20.0),
@@ -68,7 +68,7 @@ class _AboutMobileState extends State<AboutMobile> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Urllaunch(
-                    svgPath: "../../assets/instagram.svg",
+                    svgPath: "assets/instagram.svg",
                     url: "https://www.instagram.com/?hl=fr",
                   ),
                   Urllaunch(
@@ -97,7 +97,7 @@ class _AboutMobileState extends State<AboutMobile> {
                   child: CircleAvatar(
                     radius: 110.0,
                     backgroundColor: Colors.white,
-                    backgroundImage: AssetImage("../../assets/photo.png"),
+                    backgroundImage: AssetImage("/assets/photo.png"),
                   ),
                 ),
               ),

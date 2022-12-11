@@ -26,7 +26,7 @@ class _ContactWebState extends State<ContactWeb> {
               child: CircleAvatar(
                 radius: 70.0,
                 backgroundColor: Colors.white,
-                backgroundImage: AssetImage("../../assets/photo.png"),
+                backgroundImage: AssetImage("/assets/photo.png"),
               ),
             ),
             SizedBox(
@@ -46,7 +46,7 @@ class _ContactWebState extends State<ContactWeb> {
                     );
                   },
                   icon: SvgPicture.asset(
-                    "../../assets/instagram.svg",
+                    "assets/instagram.svg",
                     color: Colors.black,
                     width: 35.0,
                   ),
@@ -107,7 +107,7 @@ class _ContactWebState extends State<ContactWeb> {
                   Spacer(),
                   TabsWeb(title: "Works", route: '/works'),
                   Spacer(),
-                  TabsWeb(title: "Bloc", route: '/bloc'),
+                  TabsWeb(title: "Blog", route: '/blog'),
                   Spacer(),
                   TabsWeb(title: "About", route: '/about'),
                   Spacer(),
