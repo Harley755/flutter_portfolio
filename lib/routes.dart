@@ -3,10 +3,12 @@ import 'package:portfolio_web/mobile/about_mobile.dart';
 import 'package:portfolio_web/mobile/blog_mobile.dart';
 import 'package:portfolio_web/mobile/contact_mobile.dart';
 import 'package:portfolio_web/mobile/landing_page_mobile.dart';
+import 'package:portfolio_web/mobile/works_mobile.dart';
 import 'package:portfolio_web/web/about_web.dart';
 import 'package:portfolio_web/web/blog_web.dart';
 import 'package:portfolio_web/web/contact_web.dart';
 import 'package:portfolio_web/web/landing_page_web.dart';
+import 'package:portfolio_web/web/works_web.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -19,6 +21,18 @@ class Routes {
               return LandingPageWeb();
             } else {
               return LandingPageMobile();
+            }
+          }),
+        );
+
+      case '/works':
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => LayoutBuilder(builder: (context, constraints) {
+            if (constraints.maxWidth > 800) {
+              return WorksWeb();
+            } else {
+              return WorksMobile();
             }
           }),
         );
