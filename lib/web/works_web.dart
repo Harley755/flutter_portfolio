@@ -119,7 +119,22 @@ class _WorksWebState extends State<WorksWeb> {
             ),
           ];
         },
-        body: ListView(),
+        body: ListView(
+          children: [
+            Column(
+              children: [
+                SizedBox(height: 30.0),
+                SansBold("Works", 40.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    AnimatedCardWeb(imagePath: 'imagePath'),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
