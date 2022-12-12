@@ -130,9 +130,42 @@ class _WorksWebState extends State<WorksWeb> {
                   children: [
                     AnimatedCardWeb(
                       imagePath: "assets/screenshot.jpeg",
+                      heigth: 200,
+                      containerWidth: 300,
+                    ),
+                    SizedBox(
+                      width: widthDevice / 3,
+                      child: Column(
+                        children: [
+                          SansBold("Portfolio", 30.0),
+                          SizedBox(height: 15.0),
+                          Sans(
+                            "Deployed on Android, Ios, Web, the portfolio projet was truly an achievement I used Flutter the develop the beautiful and responsive UI and Firebase for the back-end.",
+                            15.0,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: widthDevice / 3,
+                      child: Column(
+                        children: [
+                          SansBold("PhotoShop", 30.0),
+                        ],
+                      ),
+                    ),
+                    AnimatedCardWeb(
+                      imagePath: 'assets/photoShop.jpg',
+                      heigth: 200,
+                      containerWidth: 300,
+                    ),
+                  ],
+                )
               ],
             )
           ],
