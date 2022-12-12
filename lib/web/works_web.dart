@@ -128,7 +128,9 @@ class _WorksWebState extends State<WorksWeb> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AnimatedCardWeb(imagePath: 'imagePath'),
+                    AnimatedCardWeb(
+                      imagePath: 'assets/ScreenShot-portfolio.jpeg',
+                    ),
                   ],
                 )
               ],
