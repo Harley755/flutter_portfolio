@@ -101,9 +101,10 @@ class SansBold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title,
-        style:
-            GoogleFonts.openSans(fontSize: size, fontWeight: FontWeight.bold));
+    return Text(
+      title,
+      style: GoogleFonts.openSans(fontSize: size, fontWeight: FontWeight.bold),
+    );
   }
 }
 

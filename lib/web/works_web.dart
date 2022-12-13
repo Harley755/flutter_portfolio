@@ -160,7 +160,7 @@ class _WorksWebState extends State<WorksWeb> {
                       ),
                     ),
                     AnimatedCardWeb(
-                      imagePath: 'assets/photoShop.jpg',
+                      imagePath: "assets/photoshop.jpg",
                       heigth: 200,
                       containerWidth: 300,
                     ),
