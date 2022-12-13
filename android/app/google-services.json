@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "640068779558",
+    "project_id": "flutter-portfolio-a2ea8",
+    "storage_bucket": "flutter-portfolio-a2ea8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640068779558:android:52c4274b992509cd8970e7",
+        "android_client_info": {
+          "package_name": "com.example.portfolio_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640068779558-tqgrqj8pkm6pa3fhpmrh8e1fna7srpe9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLM3A4MqASDpJqcI-IdXRK6i5WStrgSxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640068779558-tqgrqj8pkm6pa3fhpmrh8e1fna7srpe9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "640068779558-5k2tbmrovuasmu4fcgdgnsluss7m27in.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.portfolioWeb"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
