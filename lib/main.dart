@@ -2,10 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_web/routes.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart'
+    show kIsWeb; // APP SAIT VOUS ROULER SUR WEB OU MOBILE
 
 void main() async {
-  WidgetsFlutterBinding();
-  await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: FirebaseOptions(
+        apiKey: "AIzaSyC8bSRF6okVSBzhXCyh6pnCdxWcj7jWUEI",
+        authDomain: "flutter-portfolio-a2ea8.firebaseapp.com",
+        projectId: "flutter-portfolio-a2ea8",
+        storageBucket: "flutter-portfolio-a2ea8.appspot.com",
+        messagingSenderId: "640068779558",
+        appId: "1:640068779558:web:18351d19ef9fb8e38970e7",
+        measurementId: "G-LRBVJCBDYM",
+      ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
   setPathUrlStrategy();
   runApp(const MyApp());
 }

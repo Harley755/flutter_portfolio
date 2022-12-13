@@ -151,7 +151,7 @@ class _AboutWebState extends State<AboutWeb> {
                     child: CircleAvatar(
                       radius: 140.0,
                       backgroundColor: Colors.white,
-                      backgroundImage: AssetImage(' assets/photo.png'),
+                      backgroundImage: AssetImage('assets/photo.png'),
                     ),
                   ),
                 ),
