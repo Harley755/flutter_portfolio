@@ -88,8 +88,8 @@ class _WorksMobileState extends State<WorksMobile> {
                   AnimatedCardWeb(
                     imagePath: "assets/screenshot.jpeg",
                     fit: BoxFit.contain,
-                    heigth: 150,
-                    containerWidth: 300,
+                    heigth: 150.0,
+                    containerWidth: 300.0,
                   ),
                   SizedBox(height: 30.0),
                   SansBold("Portfolio", 20.0),
@@ -102,10 +102,12 @@ class _WorksMobileState extends State<WorksMobile> {
                     ),
                   ),
                   SizedBox(height: 20.0),
+                  SansBold("Photoshop", 20.0),
+                  SizedBox(height: 10.0),
                   AnimatedCardWeb(
                     imagePath: "assets/photoshop.jpg",
-                    heigth: 150,
-                    containerWidth: 300,
+                    heigth: 150.0,
+                    containerWidth: 300.0,
                   )
                 ],
               ),
