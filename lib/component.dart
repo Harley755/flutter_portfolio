@@ -250,8 +250,9 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
       child: Card(
         elevation: 30,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            side: BorderSide(color: Colors.tealAccent)),
+          borderRadius: BorderRadius.circular(15.0),
+          side: BorderSide(color: Colors.tealAccent),
+        ),
         shadowColor: Colors.tealAccent,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -260,9 +261,10 @@ class _AnimatedCardWebState extends State<AnimatedCardWeb>
             children: [
               Image.asset(
                 widget.imagePath,
-                height: widget.heigth == null ? 200 : widget.heigth,
-                width:
-                    widget.containerWidth == null ? 200 : widget.containerWidth,
+                height: widget.heigth == null ? 200.0 : widget.heigth,
+                width: widget.containerWidth == null
+                    ? 200.0
+                    : widget.containerWidth,
                 fit: widget.fit == null ? null : widget.fit,
               ),
               SizedBox(
