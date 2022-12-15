@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
 
 import '../component.dart';
 
@@ -15,26 +16,28 @@ class _BlogMobileState extends State<BlogMobile> {
   // List title = ["Who is Dash 0 ?", "Who is Dash 1 ?"];
   // List body = ["I'm not 0", "I'm not 1"];
 
-  void article() async {
-    await FirebaseFirestore.instance.collection("articles").get().then(
-      (querySnapshot) {
-        querySnapshot.docs.reversed.forEach(
-          (element) {
-            // debugPrint(element.data()['title']);
-          },
-        );
-      },
-    );
-  }
+  // void article() async {
+  //   await FirebaseFirestore.instance.collection("articles").get().then(
+  //     (querySnapshot) {
+  //       querySnapshot.docs.reversed.forEach(
+  //         (element) {
+  //           // debugPrint(element.data()['title']);
+  //         },
+  //       );
+  //     },
+  //   );
+  // }
 
-  void streamArticle() async {
-    await for (var snapshot
-        in FirebaseFirestore.instance.collection("articles").snapshots()) {
-      for (var title in snapshot.docs.reversed) {
-        print(title.data()['title']);
-      }
-    }
-  }
+  // void streamArticle() async {
+  //   var logger = Logger();
+
+  //   await for (var snapshot
+  //       in FirebaseFirestore.instance.collection("articles").snapshots()) {
+  //     for (var title in snapshot.docs.reversed) {
+  //       logger.d(title.data()['title']);
+  //     }
+  //   }
+  // }
 
   // @override
   // void initState() {

@@ -150,16 +150,58 @@ class TextForm extends StatelessWidget {
   final containerWidth;
   final hinText;
   final maxLines;
+  final controller;
+  final validator;
 
-  const TextForm(
-      {super.key,
-      @required this.text,
-      @required this.containerWidth,
-      @required this.hinText,
-      this.maxLines});
+  const TextForm({
+    super.key,
+    @required this.text,
+    @required this.containerWidth,
+    @required this.hinText,
+    this.maxLines,
+    this.controller,
+    this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
+    var textFormField = TextFormField(
+      // inputFormatters: [
+      //   LengthLimitingTextInputFormatter(10),
+      //   FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
+      // ],
+      // validator: (value) {
+      //   if (RegExp("\\bbrice\\b", caseSensitive: false)
+      //       .hasMatch(value.toString())) {
+      //     return "Match Found";
+      //   }
+      //   return null;
+      // },
+      validator: validator,
+      controller: controller,
+      maxLines: maxLines == null ? null : maxLines,
+      decoration: InputDecoration(
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.teal),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.teal, width: 2),
+          borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        ),
+        hintText: hinText,
+        hintStyle: GoogleFonts.poppins(fontSize: 14),
+      ),
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -167,39 +209,7 @@ class TextForm extends StatelessWidget {
         SizedBox(
           height: 5.0,
         ),
-        SizedBox(
-            width: containerWidth,
-            child: TextFormField(
-              // inputFormatters: [
-              //   LengthLimitingTextInputFormatter(10),
-              //   FilteringTextInputFormatter.allow(RegExp('[a-zA-Z]'))
-              // ],
-              maxLines: maxLines == null ? null : maxLines,
-              decoration: InputDecoration(
-                focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.teal),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.teal, width: 2),
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                ),
-                hintText: hinText,
-                hintStyle: GoogleFonts.poppins(fontSize: 14),
-              ),
-              validator: (value) {
-                if (RegExp("\\bbrice\\b", caseSensitive: false)
-                    .hasMatch(value.toString())) {
-                  return "Match Found";
-                }
-                return null;
-              },
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-            )),
+        SizedBox(width: containerWidth, child: textFormField),
       ],
     );
   }

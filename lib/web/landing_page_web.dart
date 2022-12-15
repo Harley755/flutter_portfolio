@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:portfolio_web/component.dart';
 
 class LandingPageWeb extends StatefulWidget {
@@ -9,6 +10,16 @@ class LandingPageWeb extends StatefulWidget {
 }
 
 class _LandingPageWebState extends State<LandingPageWeb> {
+  var logger = Logger();
+
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
+
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     var heightDevice = MediaQuery.of(context).size.height;
@@ -44,14 +55,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Urllaunch(
-                    svgPath: "assets/instagram.svg",
-                    url: "https://www.instagram.com/?hl=fr"),
+                  svgPath: "assets/instagram.svg",
+                  url: "https://www.instagram.com/?hl=fr",
+                ),
                 Urllaunch(
-                    svgPath: 'assets/github.svg',
-                    url: "https://github.com/Harley755"),
+                  svgPath: 'assets/github.svg',
+                  url: "https://github.com/Harley755",
+                ),
                 Urllaunch(
-                    svgPath: 'assets/twitter.svg',
-                    url: "https://twitter.com/bg_dev2"),
+                  svgPath: 'assets/twitter.svg',
+                  url: "https://twitter.com/bg_dev2",
+                ),
               ],
             )
           ],
@@ -93,14 +107,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                   children: [
                     Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20.0),
-                              topRight: Radius.circular(20.0),
-                              bottomRight: Radius.circular(20.0),
-                            ),
-                            color: Colors.tealAccent),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20.0),
+                            topRight: Radius.circular(20.0),
+                            bottomRight: Radius.circular(20.0),
+                          ),
+                          color: Colors.tealAccent,
+                        ),
                         padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 10.0),
+                          horizontal: 20.0,
+                          vertical: 10.0,
+                        ),
                         child: SansBold("Hello I'm", 15)),
                     SizedBox(
                       height: 15.0,
@@ -119,27 +136,19 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                         Sans("bricegoudalo@gmail.com", 15.0)
                       ],
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
+                    SizedBox(height: 10.0),
                     Row(
                       children: [
                         Icon(Icons.call),
-                        SizedBox(
-                          width: 20.0,
-                        ),
+                        SizedBox(width: 20.0),
                         Sans("+229 96 20 33 14", 15.0)
                       ],
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
+                    SizedBox(height: 10.0),
                     Row(
                       children: [
                         Icon(Icons.location_pin),
-                        SizedBox(
-                          width: 20.0,
-                        ),
+                        SizedBox(width: 20.0),
                         Sans("Houeyiho, Cotonou Benin", 15.0)
                       ],
                     ),
@@ -182,14 +191,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       height: 10.0,
                     ),
                     Sans(
-                        "Hello I'm Brice GOUDALO, I specialize in flutter developement",
-                        15),
+                      "Hello I'm Brice GOUDALO, I specialize in flutter developement",
+                      15,
+                    ),
                     Sans(
-                        "I strive to ensure astounding performance with state of ",
-                        15),
+                      "I strive to ensure astounding performance with state of ",
+                      15,
+                    ),
                     Sans(
-                        "The art security for Andoid, Ios, Mac, Linus and Windows ",
-                        15),
+                      "The art security for Andoid, Ios, Mac, Linus and Windows ",
+                      15,
+                    ),
                     SizedBox(
                       height: 10.0,
                     ),
@@ -224,44 +236,45 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                           width: 7,
                         ),
                         Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.tealAccent,
-                                style: BorderStyle.solid,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(5.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
                             ),
-                            padding: EdgeInsets.all(7.0),
-                            child: Sans("Android", 15)),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          padding: EdgeInsets.all(7.0),
+                          child: Sans("Android", 15),
+                        ),
                         SizedBox(
                           width: 7,
                         ),
                         Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.tealAccent,
-                                style: BorderStyle.solid,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(5.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
                             ),
-                            padding: EdgeInsets.all(7.0),
-                            child: Sans("Ios", 15)),
-                        SizedBox(
-                          width: 7,
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          padding: EdgeInsets.all(7.0),
+                          child: Sans("Ios", 15),
                         ),
+                        SizedBox(width: 7.0),
                         Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.tealAccent,
-                                style: BorderStyle.solid,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(5.0),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              style: BorderStyle.solid,
+                              width: 2.0,
                             ),
-                            padding: EdgeInsets.all(7.0),
-                            child: Sans("Window", 15)),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          padding: EdgeInsets.all(7.0),
+                          child: Sans("Window", 15),
+                        ),
                       ],
                     )
                   ],
@@ -300,52 +313,88 @@ class _LandingPageWebState extends State<LandingPageWeb> {
           // FOURTH SECTION
           Container(
             height: heightDevice,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SansBold("Contact me", 40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        TextForm(
+            child: Form(
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SansBold("Contact me", 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          TextForm(
                             text: "First name",
                             containerWidth: 350,
-                            hinText: "Please type your first name"),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        TextForm(
+                            hinText: "Please type your first name",
+                            controller: _firstNameController,
+                            validator: (text) {
+                              if (text.toString().isEmpty) {
+                                return "First name is required";
+                              }
+                            },
+                          ),
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          TextForm(
                             text: "Email",
                             containerWidth: 350,
-                            hinText: "Please type your email"),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        TextForm(
+                            hinText: "Please type your email",
+                            controller: _emailController,
+                            validator: (text) {
+                              if (text.toString().isEmpty) {
+                                return "Email is required";
+                              }
+                            },
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          TextForm(
                             text: "Last name",
                             containerWidth: 350,
-                            hinText: "Please type your last name"),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        TextForm(
+                            hinText: "Please type your last name",
+                            controller: _lastNameController,
+                            validator: (text) {
+                              if (text.toString().isEmpty) {
+                                return "Last name is required";
+                              }
+                            },
+                          ),
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          TextForm(
                             text: "Phone number",
                             containerWidth: 350,
-                            hinText: "Please type your phone number"),
-                      ],
-                    )
-                  ],
-                ),
-                TextForm(
-                  text: "Message",
-                  containerWidth: widthDevice / 1.5,
-                  hinText: "Please type your message",
-                  maxLines: 10,
-                ),
-                MaterialButton(
+                            hinText: "Please type your phone number",
+                            controller: _phoneController,
+                            validator: (text) {
+                              if (text.toString().isEmpty) {
+                                return "Phone number is required";
+                              }
+                            },
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  TextForm(
+                    text: "Message",
+                    containerWidth: widthDevice / 1.5,
+                    hinText: "Please type your message",
+                    maxLines: 10,
+                    controller: _messageController,
+                    validator: (text) {
+                      if (text.toString().isEmpty) {
+                        return "Message is required";
+                      }
+                    },
+                  ),
+                  MaterialButton(
                     elevation: 20.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
@@ -354,8 +403,13 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     minWidth: 200.0,
                     color: Colors.tealAccent,
                     child: SansBold("Submit", 20.0),
-                    onPressed: () {})
-              ],
+                    onPressed: () {
+                      logger.d(_firstNameController.text);
+                      formKey.currentState!.validate();
+                    },
+                  )
+                ],
+              ),
             ),
           ),
           SizedBox(

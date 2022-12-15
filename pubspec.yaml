@@ -41,6 +41,7 @@ dependencies:
   url_launcher:
   url_strategy:
   cloud_firestore: ^4.2.0
+  logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:

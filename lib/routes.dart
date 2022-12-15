@@ -22,7 +22,7 @@ class Routes {
             } else {
               return LandingPageMobile();
             }
-          }),
+          },),
         );
 
       case '/works':
@@ -34,7 +34,7 @@ class Routes {
             } else {
               return WorksMobile();
             }
-          }),
+          },),
         );
 
       case '/blog':
