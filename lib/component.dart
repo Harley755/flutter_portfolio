@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TabsWeb extends StatefulWidget {
@@ -307,4 +309,37 @@ class Urllaunch extends StatelessWidget {
       ),
     );
   }
+}
+
+class AddDataFirestore {
+  var logger = Logger();
+
+  CollectionReference response =
+      FirebaseFirestore.instance.collection("messages");
+
+  Future<void> addResponse(final firstName, final lastName, final email,
+      final phoneNumber, final message) async {
+    return response
+        .add({
+          'first_name': firstName,
+          'last_name': lastName,
+          'email': email,
+          'phone_number': phoneNumber,
+          'message': message,
+        })
+        .then((value) => logger.d("Success"))
+        .catchError((error) => logger.d(error));
+  }
+}
+
+Future DialogError(BuildContext context) {
+  return showDialog(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: SansBold("Submitted", 20.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    ),
+  );
 }

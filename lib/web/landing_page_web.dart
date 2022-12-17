@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:portfolio_web/component.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class LandingPageWeb extends StatefulWidget {
   const LandingPageWeb({super.key});
@@ -403,18 +404,27 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                     minWidth: 200.0,
                     color: Colors.tealAccent,
                     child: SansBold("Submit", 20.0),
-                    onPressed: () {
+                    onPressed: () async {
                       logger.d(_firstNameController.text);
-                      formKey.currentState!.validate();
+                      final addData = new AddDataFirestore();
+                      if (formKey.currentState!.validate()) {
+                        await addData.addResponse(
+                          _firstNameController.text,
+                          _lastNameController.text,
+                          _emailController.text,
+                          _phoneController.text,
+                          _messageController.text,
+                        );
+                        formKey.currentState!.reset();
+                        DialogError(context);
+                      }
                     },
                   )
                 ],
               ),
             ),
           ),
-          SizedBox(
-            height: 20.0,
-          ),
+          SizedBox(height: 20.0),
         ],
       ),
     );
