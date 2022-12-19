@@ -408,15 +408,17 @@ class _LandingPageWebState extends State<LandingPageWeb> {
                       logger.d(_firstNameController.text);
                       final addData = new AddDataFirestore();
                       if (formKey.currentState!.validate()) {
-                        await addData.addResponse(
+                        if (await addData.addResponse(
                           _firstNameController.text,
                           _lastNameController.text,
                           _emailController.text,
                           _phoneController.text,
                           _messageController.text,
-                        );
-                        formKey.currentState!.reset();
-                        DialogError(context);
+                        )) {
+                          formKey.currentState!.reset();
+                          DialogError(context, "Message sent successfully");
+                        }
+                        DialogError(context, "Message failed to sent");
                       }
                     },
                   )

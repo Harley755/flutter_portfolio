@@ -315,20 +315,22 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                         minWidth: widthDevice / 2.2,
                         color: Colors.tealAccent,
                         onPressed: () async {
-                          logger.d(_firstNameController.text);
-                          final addData = new AddDataFirestore();
-                          if (formKey.currentState!.validate()) {
-                            await addData.addResponse(
-                              _firstNameController.text,
-                              _lastNameController.text,
-                              _emailController.text,
-                              _phoneController.text,
-                              _messageController.text,
-                            );
-                            formKey.currentState!.reset();
-                            DialogError(context);
-                          }
-                        },
+                      logger.d(_firstNameController.text);
+                      final addData = new AddDataFirestore();
+                      if (formKey.currentState!.validate()) {
+                        if (await addData.addResponse(
+                          _firstNameController.text,
+                          _lastNameController.text,
+                          _emailController.text,
+                          _phoneController.text,
+                          _messageController.text,
+                        )) {
+                          formKey.currentState!.reset();
+                          DialogError(context, "Message sent successfully");
+                        }
+                        DialogError(context, "Message failed to sent");
+                      }
+                    },
                         child: SansBold("Submit", 20.0),
                       ),
                     ],

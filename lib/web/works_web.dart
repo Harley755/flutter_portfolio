@@ -30,13 +30,9 @@ class _WorksWebState extends State<WorksWeb> {
                 backgroundImage: AssetImage('assets/photo.png'),
               ),
             ),
-            SizedBox(
-              height: 15.0,
-            ),
+            SizedBox(height: 15.0),
             SansBold("Brice GOUDALO", 30.0),
-            SizedBox(
-              height: 15.0,
-            ),
+            SizedBox(height: 15.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -101,9 +97,7 @@ class _WorksWebState extends State<WorksWeb> {
               ),
               title: Row(
                 children: [
-                  Spacer(
-                    flex: 3,
-                  ),
+                  Spacer(flex: 3),
                   TabsWeb(title: "Home", route: '/'),
                   Spacer(),
                   TabsWeb(title: "Works", route: '/works'),
