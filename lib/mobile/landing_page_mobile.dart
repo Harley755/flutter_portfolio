@@ -52,57 +52,7 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
             color: Colors.black,
           ),
         ),
-        endDrawer: Drawer(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              DrawerHeader(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: Container(
-                  child: CircleAvatar(
-                    radius: 70.0,
-                    backgroundColor: Colors.white,
-                    backgroundImage: AssetImage('assets/photo.png'),
-                  ),
-                ),
-              ),
-              TabsMobile(text: "Home", route: '/'),
-              SizedBox(
-                height: 20.0,
-              ),
-              TabsMobile(text: "Works", route: '/works'),
-              SizedBox(
-                height: 20.0,
-              ),
-              TabsMobile(text: "Blog", route: '/blog'),
-              SizedBox(
-                height: 20.0,
-              ),
-              TabsMobile(text: "About", route: '/about'),
-              SizedBox(
-                height: 20.0,
-              ),
-              TabsMobile(text: "Contact", route: '/contact'),
-              SizedBox(
-                height: 40.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Urllaunch(
-                      svgPath: "assets/instagram.svg",
-                      url: "https://www.instagram.com/?hl=fr"),
-                  Urllaunch(
-                      svgPath: 'assets/github.svg',
-                      url: "https://github.com/Harley755"),
-                  Urllaunch(
-                      svgPath: 'assets/twitter.svg',
-                      url: "https://twitter.com/bg_dev2"),
-                ],
-              ),
-            ],
-          ),
-        ),
+        endDrawer: DrawersMobile(),
         body: ListView(
           children: [
             //  FIRST SECTION
@@ -315,22 +265,22 @@ class _LandingPageMobileState extends State<LandingPageMobile> {
                         minWidth: widthDevice / 2.2,
                         color: Colors.tealAccent,
                         onPressed: () async {
-                      logger.d(_firstNameController.text);
-                      final addData = new AddDataFirestore();
-                      if (formKey.currentState!.validate()) {
-                        if (await addData.addResponse(
-                          _firstNameController.text,
-                          _lastNameController.text,
-                          _emailController.text,
-                          _phoneController.text,
-                          _messageController.text,
-                        )) {
-                          formKey.currentState!.reset();
-                          DialogError(context, "Message sent successfully");
-                        }
-                        DialogError(context, "Message failed to sent");
-                      }
-                    },
+                          logger.d(_firstNameController.text);
+                          final addData = new AddDataFirestore();
+                          if (formKey.currentState!.validate()) {
+                            if (await addData.addResponse(
+                              _firstNameController.text,
+                              _lastNameController.text,
+                              _emailController.text,
+                              _phoneController.text,
+                              _messageController.text,
+                            )) {
+                              formKey.currentState!.reset();
+                              DialogError(context, "Message sent successfully");
+                            }
+                            DialogError(context, "Message failed to sent");
+                          }
+                        },
                         child: SansBold("Submit", 20.0),
                       ),
                     ],

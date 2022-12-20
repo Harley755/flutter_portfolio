@@ -51,50 +51,7 @@ class _BlogMobileState extends State<BlogMobile> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.white,
-        endDrawer: Drawer(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              DrawerHeader(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: Container(
-                  child: CircleAvatar(
-                    radius: 70.0,
-                    backgroundColor: Colors.white,
-                    backgroundImage: AssetImage('assets/photo.png'),
-                  ),
-                ),
-              ),
-              TabsMobile(text: "Home", route: '/'),
-              SizedBox(height: 20.0),
-              TabsMobile(text: "Works", route: '/works'),
-              SizedBox(height: 20.0),
-              TabsMobile(text: "Blog", route: '/blog'),
-              SizedBox(height: 20.0),
-              TabsMobile(text: "About", route: '/about'),
-              SizedBox(height: 20.0),
-              TabsMobile(text: "Contact", route: '/contact'),
-              SizedBox(height: 40.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Urllaunch(
-                    svgPath: "assets/instagram.svg",
-                    url: "https://www.instagram.com/?hl=fr",
-                  ),
-                  Urllaunch(
-                    svgPath: 'assets/github.svg',
-                    url: "https://github.com/Harley755",
-                  ),
-                  Urllaunch(
-                    svgPath: 'assets/twitter.svg',
-                    url: "https://twitter.com/bg_dev2",
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+        endDrawer: DrawersMobile(),
         body: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
