@@ -16,67 +16,7 @@ class _WorksWebState extends State<WorksWeb> {
   Widget build(BuildContext context) {
     var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 72.0,
-              backgroundColor: Colors.tealAccent,
-              child: CircleAvatar(
-                radius: 70.0,
-                backgroundColor: Colors.white,
-                backgroundImage: AssetImage('assets/photo.png'),
-              ),
-            ),
-            SizedBox(height: 15.0),
-            SansBold("Brice GOUDALO", 30.0),
-            SizedBox(height: 15.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                  onPressed: () async {
-                    await await launchUrl(
-                      Uri.parse("https://www.instagram.com/?hl=fr"),
-                    );
-                  },
-                  icon: SvgPicture.asset(
-                    "assets/instagram.svg",
-                    color: Colors.black,
-                    width: 35.0,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () async {
-                    await await launchUrl(
-                      Uri.parse("https://github.com/Harley755"),
-                    );
-                  },
-                  icon: SvgPicture.asset(
-                    'assets/github.svg',
-                    color: Colors.black,
-                    width: 35.0,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () async {
-                    await await launchUrl(
-                      Uri.parse("https://twitter.com/bg_dev2"),
-                    );
-                  },
-                  icon: SvgPicture.asset(
-                    'assets/twitter.svg',
-                    color: Colors.black,
-                    width: 35.0,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+      drawer: DrawersWeb(),
       backgroundColor: Colors.white,
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, innerBoxIsScrolled) {

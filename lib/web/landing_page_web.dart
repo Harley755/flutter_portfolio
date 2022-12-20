@@ -27,49 +27,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
     var widthDevice = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      drawer: Drawer(
-        backgroundColor: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 74.0,
-              backgroundColor: Colors.tealAccent,
-              child: CircleAvatar(
-                radius: 72.0,
-                backgroundColor: Colors.black,
-                child: CircleAvatar(
-                  radius: 70.0,
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('assets/photo.png'),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-            SansBold("Brice GOUDALO", 30.0),
-            SizedBox(height: 15.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Urllaunch(
-                  svgPath: "assets/instagram.svg",
-                  url: "https://www.instagram.com/?hl=fr",
-                ),
-                Urllaunch(
-                  svgPath: 'assets/github.svg',
-                  url: "https://github.com/Harley755",
-                ),
-                Urllaunch(
-                  svgPath: 'assets/twitter.svg',
-                  url: "https://twitter.com/bg_dev2",
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
+      drawer: DrawersWeb(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
