@@ -59,6 +59,37 @@ class _TabsWebState extends State<TabsWeb> {
   }
 }
 
+// TABSWEBLIST
+class TabsWebList extends StatefulWidget {
+  const TabsWebList({super.key});
+
+  @override
+  State<TabsWebList> createState() => _TabsWebListState();
+}
+
+class _TabsWebListState extends State<TabsWebList> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Spacer(
+          flex: 3,
+        ),
+        TabsWeb(title: "Home", route: '/'),
+        Spacer(),
+        TabsWeb(title: "Works", route: '/works'),
+        Spacer(),
+        TabsWeb(title: "Blog", route: '/blog'),
+        Spacer(),
+        TabsWeb(title: "About", route: '/about'),
+        Spacer(),
+        TabsWeb(title: "Contact", route: '/contact'),
+        Spacer(),
+      ],
+    );
+  }
+}
+
 // TABSMOBILES
 class TabsMobile extends StatefulWidget {
   final text;

@@ -49,9 +49,7 @@ class _LandingPageWebState extends State<LandingPageWeb> {
               height: 15.0,
             ),
             SansBold("Brice GOUDALO", 30.0),
-            SizedBox(
-              height: 15.0,
-            ),
+            SizedBox(height: 15.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
