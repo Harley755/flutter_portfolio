@@ -81,23 +81,7 @@ class _AboutWebState extends State<AboutWeb> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         iconTheme: IconThemeData(size: 25.0, color: Colors.black),
-        title: Row(
-          children: [
-            Spacer(
-              flex: 3,
-            ),
-            TabsWeb(title: "Home", route: '/'),
-            Spacer(),
-            TabsWeb(title: "Works", route: '/works'),
-            Spacer(),
-            TabsWeb(title: "Blog", route: '/blog'),
-            Spacer(),
-            TabsWeb(title: "About", route: '/about'),
-            Spacer(),
-            TabsWeb(title: "Contact", route: '/contact'),
-            Spacer(),
-          ],
-        ),
+        title: TabsWebList(),
       ),
       body: ListView(
         children: [
